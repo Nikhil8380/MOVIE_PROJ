@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+
+    <style>
+    input{
+        width: 100%;
+    }
+
+
+    </style></head>
+    <body>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data" class="form1" >
+
+         {% csrf_token %}
+        {{ form1.as_p}}
+
+    <input class="btn btn-warning" type="submit" value="REGISTER">
+
+{% endblock %}
+    </form>
+
+</div>
+
+</body>

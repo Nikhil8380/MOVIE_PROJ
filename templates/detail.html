@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load staticfiles %}
+<div class="panel-info">
+    <h1 class='media-heading'><font color="blue"><b>TITLE::</b>{{ movies.title }}</font></h1>
+    <div align="right" class="img-responsive"><img src="{{ movies.image.url }}"   width="700" height="240"></div>
+    <h2 class="hljs-name"><font color="#8b0000"><b>POSTED BY::</b>{{ movies.admin  }}</font>
+        </h2>
+    <br><h3 class="label-info">RELEASES ON:==
+
+
+            <div class="date postdate">
+                {{ movies.Release_year }}
+            </div></h3>
+       <div class="tab-content">
+           <h3><b>LEAD ACTOR ::</b> {{ movies.Lead_Actor }}</h3>
+           <h3><b>LEAD ACTRESS ::</b>{{ movies.Lead_Actress }}</h3>
+           <h3><b>DIRECTED BY :: </b>{{ movies.director }}</h3>
+           <h3><b>PRODUCED BY :: </b>{{ movies.Producer }}</h3>
+
+       </div>
+
+
+    <p class='container' ><font color="#006400" size="4">{{ movies.summary|safe|linebreaksbr }}</font></p>
+
+
+      {% if request.user.is_authenticated %}
+          {% if movies.admin == request.user %}
+          <a class="btn btn-primary" href="{% url 'update' pk=movies.pk %}">EDIT DETAILS</a>
+          <a class="btn btn-danger" href="{% url 'post_remove' pk=movies.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+              {% endif %}
+             {% endif %}
+
+
+</div>
+</div>
+{% endblock %}

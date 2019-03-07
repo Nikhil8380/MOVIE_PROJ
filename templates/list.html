@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body_block %}
+    {% load staticfiles %}
+    <li class="nav-item ">
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                       <form class="example"  method="GET" action="" >
+                         <input type="text" placeholder="Search.." name="q" value="{{request.GET.q}}">
+                         <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+    <div class="centerstage">
+
+    {% for mov in movies_list %}
+        <div class="list-inline">
+
+            <h1><a href="{% url 'detail' pk=mov.pk %}">{{ mov.title }}</a></h1>
+            <div><img src="{{ mov.image.url }}" align="right" width="350" height="280">
+                <h4>PUBLISHED ON: </h4><p> {{ mov.Release_year|date:"D M Y"}}</p>
+            </div>
+           <h2>===========================================================</h2>
+    {% endfor %}
+        </div></div></div>
+{% endblock %}

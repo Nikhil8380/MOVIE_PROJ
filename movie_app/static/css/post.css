@@ -1,0 +1,110 @@
+<style>
+  #mainNav{
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+  }
+</style>
+
+
+<style media="screen">
+
+* {
+box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+padding: 8px;
+font-size: 15px;
+border: 1px solid grey;
+float: left;
+width: 68%;
+background: #fff;
+height: 39px;
+}
+
+/* Style the submit button */
+form.example button {
+float: left;
+width: 15%;
+padding: 10px;
+background: #2196F3;
+color: white;
+font-size: 12px;
+border: 1px solid grey;
+border-left: none; /* Prevent double borders */
+cursor: pointer;
+height: 38.5px;
+
+}
+
+form.example button:hover {
+background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+content: "";
+clear: both;
+display: table;
+}
+</style>
+
+
+<style>
+div .box{
+
+  width: 690px;
+  padding: 10px;
+  border: 2px solid gray;
+  margin-bottom: 15px;
+  border-radius: 15px 50px 30px;
+  border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+
+}
+</style>
+
+<style>
+div .box1{
+  width: 350px;
+  padding: 10px;
+  border: 2px solid gray;
+  margin-bottom: 10px;
+  border-radius: 15px 50px 30px;
+  border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+}
+</style>
+
+
+<style>
+div .box2{
+  width: 350px;
+  padding: 10px;
+  border: 2px solid gray;
+  margin: 0;
+  border-radius: 15px 50px 30px;
+  border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+}
+</style>
+
+<style>
+div .box4{
+  width: 350px;
+  padding: 10px;
+  border: 2px solid gray;
+  margin-bottom:  10px;
+  border-radius: 15px 50px 30px;
+  border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+}
+</style>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    footer{
+        background-color: crimson;
+        color:white;
+        text-align: center;
+        display: block;
+        font-size: 20px;
+    }
+
+    </style>
+<script>
+       var imgs=[{Name:"pic1",pic:"{% static 'img/a1.jpg' %}"},
+                 {Name:"pic2",pic:"{% static 'img/a3.jpg' %}"},
+                 {Name:"pic3",pic:"{% static 'img/a2.jpg' %}"},
+                 {Name:"pic4",pic:"{% static 'img/a5.jpg' %}"},
+                 {Name:"pic5",pic:"{% static 'img/a4.jpg' %}"}];
+         var count=0;
+         var msg="";
+
+         function slideshow()
+                  {
+                  count++;
+                  if(count==imgs.length)
+                  	{count=0;}
+                  document.getElementById("title").innerHTML=imgs[count].Name+"<br>"+msg;
+                  document.getElementById("pic").src=imgs[count].pic;
+                  }
+
+        function startshow()
+                  {
+                   show=setInterval(slideshow,2000);
+                   msg="(PLAYING)";
+                   }
+        function pauseshow()
+                  {
+                   clearInterval(show);
+                   msg="(PAUSED)";
+                   document.getElementById("title").innerHTML=msg;
+
+                  }
+
+
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+
+
+
+<h1><em><font color="#a52a2a">WELCOME TO HOME PAGE!!</font></em></h1><br>
+      <div align="center"><table width="800" border="4" cellspacing="5" cellpadding="4" align="center"><tr><td>
+          <iframe src="https://www.youtube.com/embed/Hi1vTJPie1I" allowfullscreen width="450" height="400" frameborder="2"></iframe></td>
+          <td><iframe src="https://www.youtube.com/embed/OPOYrh2glI4" allowfullscreen width="450" height="400" frameborder="2"></iframe></td>
+      </tr>
+		<tr align="center">
+			<td id="title" colspan="2"></td></tr>
+		<tr>
+		<td align="center" colspan="2"><img src="{% static 'img/a4.jpg' %}" width="700" height="400" id="pic"></td></tr>
+		<tr align="center">
+			<td colspan="2"><a href="javascript:startshow()">
+				<img src="{% static 'img/play.jpg' %}" width="150" height="200"></a>
+			<a href="javascript:pauseshow()">
+			<img src="{% static 'img/pause.jpg' %}"  width="150" height="200"></a></td></tr></table>
+      </div>
+
+      <footer>
+          <div>
+              &COPY; COPYRIGHT 2019
+          </div></footer>
+</div>
+
+
+
+
+</div>
+
+</body>
+{% endblock %}
+</html>

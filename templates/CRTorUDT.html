@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATE</title>
+
+            <style>
+            input,textarea{
+
+                width: 100%;
+            }
+
+
+            </style>
+</head>
+    <body>
+<div class="form-control-static">
+            {% if form.instance.pk %}
+            <h1>UPDATE MOVIE</h1>
+            <form method="post" enctype="multipart/form-data" class="form-group">
+            {{ form.as_p }}
+            {% csrf_token %}
+
+
+
+
+            <input class="btn btn-success" type="submit" value="Update"><br>
+            </form>
+            {% else %}
+            <h1>ADD MOVIE</h1>
+            <form method="POST" enctype="multipart/form-data">
+
+            {{ form2.as_p }}
+            {% csrf_token %}
+
+
+
+            <input type="submit" class="btn-group" value="CREATE">
+            {% endif %}
+  {% endblock %}
+</form>
+</div>
+
+</body>
+</html>
